@@ -69,7 +69,6 @@ HERE2: MOV R4, #255
 HERE: DJNZ R4, HERE 
 DJNZ R3, HERE2 
 RET
-
-MESSAGE: DB "Testing 234567898239238", 0
-
+MESSAGE: DB "Temperature     Humidity", 0
 END
+
