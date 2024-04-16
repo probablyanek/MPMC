@@ -1,0 +1,35 @@
+avg odd
+
+ORG 0000H
+
+MOV 40H, #01H
+MOV 41H, #02H
+MOV 42H, #03H
+MOV 43H, #04H
+MOV 44H, #05H
+MOV 45H, #06H
+MOV 46H, #07H
+MOV 47H, #08H
+MOV 48H, #09H
+MOV 49H, #0AH
+
+
+MOV R1, #00H
+MOV R2, #00H
+MOV R5, #0AH
+MOV R0, #40H
+START:
+    MOV A, @R0
+    JNB ACC.0, EXIT
+    XCH A, R1
+    ADD A, @R0
+    MOV R1, A
+    INC R2
+EXIT: INC R0
+    DJNZ R5, START
+    MOV A, R1
+    MOV B, R2
+    DIV AB
+    MOV R0, A
+    END
+
